@@ -1,0 +1,17 @@
+@import "../../../styles//variables.css";
+
+.SecondaryNavbar {
+  background-color: var(--main-color);
+  color: white;
+  padding: 4px 0px;
+}
+
+.SecondaryNavbar h6, .SecondaryNavbar .btn {
+  margin: 0;
+  font-size: 12px;
+}
+
+.SecondaryNavbar .btn {
+  color: white;
+  padding: 0;
+}

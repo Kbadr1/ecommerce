@@ -1,0 +1,73 @@
+@import "../../../styles//variables.css";
+
+.navbar {
+  background-color: white!important;
+  box-shadow: 0 1px 4px 1px rgb(0, 0, 0, 0.1);
+}
+
+
+.MainNavbar form {
+  padding-right: 20px;
+  padding-left: 20px;
+  flex-grow: 1;
+}
+
+.MainNavbar form input {
+  /* border-radius: 5px 0px 0px 5px; */
+  border-color: var(--main-color);
+  font-weight: 500;
+  font-size: 13px;
+  color: black;
+}
+
+.en-input {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.en-button {
+  border-radius: 0px 5px 5px 0px;
+}
+
+.ar-input {
+  border-radius: 0px 5px 5px 0px;
+}
+.ar-button {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.MainNavbar form input::placeholder {
+  font-weight: 500;
+  font-size: 13px;
+  color: black;
+  opacity: 0.6;
+}
+
+.MainNavbar form button {
+  
+  color: white;
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.MainNavbar form input:focus, .MainNavbar form button:focus {
+  box-shadow: none;
+  border-color: var(--main-color);
+}
+
+.MainNavbar form button:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+} 
+
+
+
+.MainNavbar .navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 0.4rem 0;
+  color: var(--main-color);
+}
+
+.MainNavbar .navbar-nav .nav-link:hover {
+  color: var(--secondary-color);
+} 
+
