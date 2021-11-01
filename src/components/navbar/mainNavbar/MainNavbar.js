@@ -9,19 +9,15 @@ import { useTranslation } from "react-i18next";
 
 const MainNavbar = () => {
   const { t } = useTranslation();
-  const currentLanguageCode = cookies.get("i18next") || "en";
-  const dispatch = useDispatch();
-  const languages = useSelector((state) => state.i18Reducer.languages);
-
-  const currentLanguage = languages.find(
-    (lang) => lang.code === currentLanguageCode
+  const currentLanguage = useSelector(
+    (state) => state.i18Reducer.currentLanguage
   );
 
   const [inputDirection, setInputDirection] = useState("");
   const [buttonDirection, setButtonDirection] = useState("");
   const [cartPadding, setCartPadding] = useState("");
   const manageStylesByLanguage = () => {
-    if (document.body.dir === "ltr") {
+    if (currentLanguage.dir === "ltr") {
       setInputDirection("en-input");
       setButtonDirection("en-button");
       setCartPadding("ps-3");

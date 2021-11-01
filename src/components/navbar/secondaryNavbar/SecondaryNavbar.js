@@ -5,34 +5,43 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
-import cookies from "js-cookie";
 
 const SecondaryNavbar = () => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
-
-  const currentLanguageCode = cookies.get("i18next") || "en";
-
   const languages = useSelector((state) => state.i18Reducer.languages);
 
-  const currentLanguage = languages.find(
-    (lang) => lang.code === currentLanguageCode
+  const currentLanguage = useSelector(
+    (state) => state.i18Reducer.currentLanguage
   );
 
   const [float, setFloat] = useState("");
   const [iconMargin, setIconMargin] = useState("");
+  const [enFlagIconVisibility, setEnFlagIconVisibility] = useState("");
+  const [arFlagIconVisibility, setArFlagIconVisibility] = useState("");
+  const [enTelephoneIconVisibility, setEnTelephoneIconVisibility] =
+    useState("");
+  const [arTelephoneIconVisibility, setARTelephoneIconVisibility] =
+    useState("");
   const ManageStylesByLanguage = () => {
-    if (document.body.dir === "ltr") {
+    if (currentLanguage.dir === "ltr") {
       setFloat("float-end");
       setIconMargin("me-1");
+      setEnFlagIconVisibility("");
+      setArFlagIconVisibility("d-none");
+      setEnTelephoneIconVisibility("me-1");
+      setARTelephoneIconVisibility("d-none");
     } else {
       setFloat("float-start");
       setIconMargin("ms-1");
+      setEnFlagIconVisibility("d-none");
+      setArFlagIconVisibility("");
+      setEnTelephoneIconVisibility("d-none");
+      setARTelephoneIconVisibility("me-1");
     }
   };
 
   useEffect(() => {
-    document.body.dir = currentLanguage.dir;
-    document.title = t("app_title");
     ManageStylesByLanguage();
   }, [currentLanguage, t]);
 
@@ -68,15 +77,11 @@ const SecondaryNavbar = () => {
                 ${language.name === currentLanguage.name ? "d-none" : ""}`}
               >
                 <span
-                  className={`flag-icon flag-icon-${
-                    language.country_code
-                  } me-1 ${document.body.dir === "rtl" ? "d-none" : ""}`}
+                  className={`flag-icon flag-icon-${language.country_code} me-1 ${enFlagIconVisibility}`}
                 ></span>
                 {language.name}
                 <span
-                  className={`flag-icon flag-icon-${
-                    language.country_code
-                  } me-1  ${document.body.dir === "ltr" ? "d-none" : ""}`}
+                  className={`flag-icon flag-icon-${language.country_code} me-1  ${arFlagIconVisibility}`}
                 ></span>
               </button>
             ))}
@@ -84,15 +89,11 @@ const SecondaryNavbar = () => {
           <div className="col-2 d-flex align-items-center justify-content-end">
             <h6>
               <i
-                className={`bi bi-telephone  ${
-                  document.body.dir === "rtl" ? "d-none" : "me-1"
-                }`}
+                className={`bi bi-telephone  ${enTelephoneIconVisibility}`}
               ></i>
               {t("navbar_phone")}
               <i
-                className={`bi bi-telephone   ${
-                  document.body.dir === "ltr" ? "d-none" : "me-1"
-                }`}
+                className={`bi bi-telephone   ${arTelephoneIconVisibility}`}
               ></i>
             </h6>
           </div>

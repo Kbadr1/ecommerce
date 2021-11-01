@@ -6,17 +6,19 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useTranslation } from "react-i18next";
-import cookies from "js-cookie";
+import Cookies from "js-cookie";
+import { setCurrentLanguage } from "./redux/actions";
 
 function App() {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
-  const languages = useSelector((state) => state.i18Reducer.languages);
-  const currentLanguageCode = cookies.get("i18next") || "en";
-  const currentLanguage = languages.find(
-    (lang) => lang.code === currentLanguageCode
+
+  const currentLanguage = useSelector(
+    (state) => state.i18Reducer.currentLanguage
   );
 
   useEffect(() => {
+    dispatch(setCurrentLanguage());
     document.body.dir = currentLanguage.dir;
     document.title = t("app_title");
   }, [currentLanguage, t]);

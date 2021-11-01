@@ -5,16 +5,21 @@ import carouselImage1 from "../../images/home/carousel-img1.jpg";
 import carouselImage2 from "../../images/home/carousel-img2.jpg";
 import featureImage1 from "../../images/home/two-features1.jpg";
 import featureImage2 from "../../images/home/two-features2.jpg";
-import organicImage from "../../images/home/organic.jpg";
+
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const { t } = useTranslation();
+
+  const currentLanguage = useSelector(
+    (state) => state.i18Reducer.currentLanguage
+  );
 
   const [carouselText, setCarouselText] = useState("");
   const [twoFeaturesImageDir, setTwoFeaturesImageDir] = useState("");
   const [featureDescription, setFeatureDescription] = useState("");
   const manageStylesByLanguage = () => {
-    if (document.body.dir === "ltr") {
+    if (currentLanguage.dir === "ltr") {
       setCarouselText("text-start");
       setTwoFeaturesImageDir("");
       setFeatureDescription("en-feature-description");
@@ -27,7 +32,7 @@ const Home = () => {
 
   useEffect(() => {
     manageStylesByLanguage();
-  }, [document.body.dir]);
+  }, [currentLanguage]);
 
   return (
     <div className="Home">
@@ -96,7 +101,7 @@ const Home = () => {
         <div className="row">
           <div className="col-12 col-sm-6 col-lg-3 offer-box">
             <div className="offers-icon">
-              <i class="bi bi-gift"></i>
+              <i className="bi bi-gift"></i>
             </div>
             <div className="offers-description">
               <h5>Win $100 To Shop</h5>
@@ -105,7 +110,7 @@ const Home = () => {
           </div>
           <div className="col-12 col-sm-6 col-lg-3 offer-box">
             <div className="offers-icon">
-              <i class="bi bi-coin"></i>
+              <i className="bi bi-coin"></i>
             </div>
             <div className="offers-description">
               <h5>Win $100 To Shop</h5>
@@ -114,7 +119,7 @@ const Home = () => {
           </div>
           <div className="col-12 col-sm-6 col-lg-3  offer-box">
             <div className="offers-icon">
-              <i class="bi bi-truck"></i>
+              <i className="bi bi-truck"></i>
             </div>
             <div className="offers-description">
               <h5>Win $100 To Shop</h5>
@@ -123,7 +128,7 @@ const Home = () => {
           </div>
           <div className="col-12 col-sm-6 col-lg-3  offer-box">
             <div className="offers-icon">
-              <i class="bi bi-headset"></i>
+              <i className="bi bi-headset"></i>
             </div>
             <div className="offers-description">
               <h5>Win $100 To Shop</h5>
@@ -135,10 +140,10 @@ const Home = () => {
       {/* top products */}
       <div className="top-products container">
         <h3>Top Products</h3>
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-          <li class="nav-item" role="presentation">
+        <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link active"
+              className="nav-link active"
               id="pills-home-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-home"
@@ -150,9 +155,9 @@ const Home = () => {
               Featured
             </button>
           </li>
-          <li class="nav-item" role="presentation">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link"
+              className="nav-link"
               id="pills-profile-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-profile"
@@ -164,9 +169,9 @@ const Home = () => {
               Bestseller
             </button>
           </li>
-          <li class="nav-item" role="presentation">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link"
+              className="nav-link"
               id="pills-contact-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-contact"
@@ -179,9 +184,9 @@ const Home = () => {
             </button>
           </li>
         </ul>
-        <div class="tab-content" id="pills-tabContent">
+        <div className="tab-content" id="pills-tabContent">
           <div
-            class="tab-pane fade show active"
+            className="tab-pane fade show active"
             id="pills-home"
             role="tabpanel"
             aria-labelledby="pills-home-tab"
@@ -189,7 +194,7 @@ const Home = () => {
             a
           </div>
           <div
-            class="tab-pane fade"
+            className="tab-pane fade"
             id="pills-profile"
             role="tabpanel"
             aria-labelledby="pills-profile-tab"
@@ -197,7 +202,7 @@ const Home = () => {
             .b
           </div>
           <div
-            class="tab-pane fade"
+            className="tab-pane fade"
             id="pills-contact"
             role="tabpanel"
             aria-labelledby="pills-contact-tab"
