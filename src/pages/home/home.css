@@ -1,0 +1,166 @@
+@import "../../styles//variables.css";
+
+.Home .carousel-container {
+  background: url("../../images//home/carousel-background.png");
+}
+
+.Home .carousel {
+  padding: 75px 0;
+}
+
+.Home .carousel img {
+  border-radius: 10px;
+}
+
+.Home .carousel .carousel-caption{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  right: 5%;
+  color: black;
+  text-transform: capitalize;
+}
+.Home .carousel .carousel-caption h1 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.Home .carousel .carousel-caption p {
+  color: gray;
+}
+
+
+.Home .carousel .carousel-caption button {
+  font-weight: 500;
+  padding: 12px 36px;
+  border-radius: 6px;
+  margin-top: 30px;
+  font-size: 12px;
+  background-color: var(--main-color);
+  color: white;
+}
+
+.Home .carousel .carousel-caption button:hover {
+  background-color: var(--secondary-color);
+}
+
+
+
+
+.Home .two-features {
+  margin-top: 75px;
+}
+
+.Home .two-features .feature {
+  position: relative;
+}
+
+.Home .two-features .feature img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.Home .two-features .feature .flip-image{
+  transform: scaleX(-1);
+}
+
+.Home .two-features .feature .en-feature-description {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 50%;
+  padding-left: 25px;
+}
+
+.Home .two-features .feature .ar-feature-description {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  left: 50%;
+  padding-right: 25px;
+}
+
+.Home .two-features .feature h3{
+  color: black;
+  font-weight: 700;
+  line-height: 40px;
+}
+.Home .two-features .feature  button {
+  font-weight: 500;
+  padding: 12px 36px;
+  border-radius: 6px;
+  margin-top: 30px;
+  font-size: 12px;
+  background-color: var(--main-color);
+  color: white;
+}
+.Home .two-features .feature .feature-description button:hover {
+  background-color: var(--secondary-color);
+}
+
+
+
+
+
+.Home .offers {
+  margin-top: 75px;
+}
+.Home .offers .offer-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.Home .offers .offer-box  .offers-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EDF3E7;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.Home .offers .offer-box .offers-icon i{
+  font-size: 40px;
+  color: var(--main-color);
+}
+.Home .offers .offer-box .offers-description h5 {
+  color: var(--main-color);
+  margin-bottom: 15px;
+}
+.Home .offers .offer-box .offers-description p {
+  color: gray;
+  font-size: 13px;
+}
+
+.top-products {
+  margin-top: 75px;
+}
+
+.top-products  h3 {
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 37px;
+}
+
+.top-products .nav-pills {
+  justify-content: center;
+}
+
+.top-products .nav-link {
+  color: black;
+  margin: 0 10px;
+  font-weight: 500;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+}
+.top-products .nav-link:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+.top-products .nav-item .active {
+  background-color: var(--main-color) !important;
+}

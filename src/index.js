@@ -12,6 +12,9 @@ import HttpApi from "i18next-http-backend";
 import "flag-icon-css/css/flag-icons.min.css";
 // bootstrap icons
 import "bootstrap-icons/font/bootstrap-icons.css";
+//redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 // i18next
 i18n
@@ -41,7 +44,9 @@ const loadingMarkup = <div>{/* <h2>loading...</h2> */}</div>;
 ReactDOM.render(
   <Suspense fallback={loadingMarkup}>
     <React.StrictMode>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>
   </Suspense>,
   document.getElementById("root")

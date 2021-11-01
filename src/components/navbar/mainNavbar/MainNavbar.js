@@ -1,31 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./mainNavbar.css";
-
-import { useTranslation } from "react-i18next";
-import cookies from "js-cookie";
-
 import logoImage from "../../../images/logo.png";
 
-const languages = [
-  {
-    code: "en",
-    name: "English",
-    country_code: "gb",
-  },
-  {
-    code: "ar",
-    name: "العربية",
-    country_code: "eg",
-    dir: "rtl",
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+
+import cookies from "js-cookie";
+import { useTranslation } from "react-i18next";
 
 const MainNavbar = () => {
+  const { t } = useTranslation();
   const currentLanguageCode = cookies.get("i18next") || "en";
+  const dispatch = useDispatch();
+  const languages = useSelector((state) => state.i18Reducer.languages);
+
   const currentLanguage = languages.find(
     (lang) => lang.code === currentLanguageCode
   );
-  const { t } = useTranslation();
 
   const [inputDirection, setInputDirection] = useState("");
   const [buttonDirection, setButtonDirection] = useState("");

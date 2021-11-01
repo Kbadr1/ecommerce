@@ -7,5 +7,13 @@
   "mainNavbar_cart": "cart",
   "mainNavbar_login": "Login & Register",
   "mainNavbar_Deals": "Deals",
-  "mainNavbar_input_placeholder": "Search Products"
+  "mainNavbar_input_placeholder": "Search Products",
+  "home_carousel_1_title": "Organic fresh fruits for your health",
+  "home_carousel_1_description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris eleifend sagittis mollis Nulla finibus arcu eu tortor. gravida aliquet",
+  "home_carousel_2_title": "Organic fresh fruits for your health",
+  "home_carousel_2_description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris eleifend sagittis mollis Nulla finibus arcu eu tortor. gravida aliquet",
+  "home_carousel_button": "shop now",
+  "two_features_feature1_description": "Organics Food Dried Persimmo",
+  "two_features_feature2_description": "Organics Food Dried Persimmo",
+  "two_features_button": "shop now"
 }

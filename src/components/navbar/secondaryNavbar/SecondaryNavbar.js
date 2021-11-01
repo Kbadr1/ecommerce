@@ -1,31 +1,22 @@
 import React, { useState } from "react";
 import "./secondaryNavbar.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
-import { useEffect } from "react";
 import cookies from "js-cookie";
 
-const languages = [
-  {
-    code: "en",
-    name: "English",
-    country_code: "gb",
-  },
-  {
-    code: "ar",
-    name: "العربية",
-    country_code: "eg",
-    dir: "rtl",
-  },
-];
-
 const SecondaryNavbar = () => {
+  const { t } = useTranslation();
+
   const currentLanguageCode = cookies.get("i18next") || "en";
+
+  const languages = useSelector((state) => state.i18Reducer.languages);
+
   const currentLanguage = languages.find(
     (lang) => lang.code === currentLanguageCode
   );
-  const { t } = useTranslation();
 
   const [float, setFloat] = useState("");
   const [iconMargin, setIconMargin] = useState("");
@@ -40,9 +31,8 @@ const SecondaryNavbar = () => {
   };
 
   useEffect(() => {
-    document.body.dir = currentLanguage.dir || "ltr";
+    document.body.dir = currentLanguage.dir;
     document.title = t("app_title");
-
     ManageStylesByLanguage();
   }, [currentLanguage, t]);
 
