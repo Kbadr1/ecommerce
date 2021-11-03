@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./mainNavbar.css";
+import { Link } from "react-router-dom";
 import logoImage from "../../../images/logo.png";
 
 import { useDispatch, useSelector } from "react-redux";
-
+import { logout } from "../../../redux/actions/logoutActions";
 import cookies from "js-cookie";
 import { useTranslation } from "react-i18next";
 
 const MainNavbar = () => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const currentLanguage = useSelector(
     (state) => state.i18Reducer.currentLanguage
@@ -37,6 +39,11 @@ const MainNavbar = () => {
     }
   };
 
+  const isAuthinticated = useSelector(
+    (state) => state.authReducer.isAuthinticated
+  );
+  const user = useSelector((state) => state.userReducer.user);
+
   useEffect(() => {
     document.addEventListener("scroll", manageNavbarPosition);
     manageStylesByLanguage();
@@ -47,9 +54,9 @@ const MainNavbar = () => {
       className={`MainNavbar navbar navbar-expand-lg navbar-light bg-light ${navbarPosition}`}
     >
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img src={logoImage} alt="Freshgo" />
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -80,19 +87,32 @@ const MainNavbar = () => {
           </form>
           <ul className="navbar-nav ms-auto  mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link px-3" href="#">
+              <Link className="nav-link px-3" to="#">
                 {t("mainNavbar_Deals")}
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link px-3" href="#">
-                <i className="bi bi-person-circle"></i> {t("mainNavbar_login")}
-              </a>
+              {isAuthinticated === false && (
+                <Link className="nav-link px-3" to="/login">
+                  <i className="bi bi-person-circle"></i>
+                  {t("mainNavbar_login")}
+                </Link>
+              )}
+              {isAuthinticated === true && (
+                <li className="nav-item">
+                  <button
+                    className="btn nav-link px-3"
+                    onClick={() => dispatch(logout())}
+                  >
+                    logout
+                  </button>
+                </li>
+              )}
             </li>
             <li className="nav-item">
-              <a className={`nav-link cart-link ${cartPadding}`} href="#">
+              <Link className={`nav-link cart-link ${cartPadding}`} to="#">
                 <i className="bi bi-cart3"></i> {t("mainNavbar_cart")}
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

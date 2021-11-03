@@ -6,8 +6,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useTranslation } from "react-i18next";
-import Cookies from "js-cookie";
 import { setCurrentLanguage } from "./redux/actions";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import { getUser } from "./redux/actions/userActions";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,9 +21,10 @@ function App() {
 
   useEffect(() => {
     dispatch(setCurrentLanguage());
+    dispatch(getUser());
     document.body.dir = currentLanguage.dir;
     document.title = t("app_title");
-  }, [currentLanguage, t]);
+  }, [currentLanguage, t, localStorage.getItem("token")]);
 
   return (
     <Router>
@@ -29,6 +32,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
         </Switch>
       </div>
     </Router>

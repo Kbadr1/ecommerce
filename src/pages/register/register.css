@@ -1,0 +1,99 @@
+@import "../../styles/variables.css";
+
+
+.Register {
+  display: flex;
+   justify-content:center ;
+   align-items: center;
+   height: 100vh;
+}
+
+.Register form {
+  width: 540px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid rgb(221, 221, 221);
+  padding: 50px 100px;
+}
+
+.Register form h5 {
+  font-weight: 700;
+}
+
+.Register form label {
+  color: gray;
+  font-size: 15px;
+} 
+.Register form .form-control {
+  height: 3rem;
+  font-size: 14px;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.Register form input {
+  border-width: 0px 0px 1px 0px;
+  border-color: var(--main-color);
+  border-radius: 0;
+}
+
+.Register form input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--main-color);
+  border-width: 0px 0px 2px 0px;
+}
+
+.Register form button {
+  width: 100%;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.Register form .login-button {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.Register form .register-button {
+  background-color: white;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.Register form .register-button  a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.Register form .question{
+  width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid gray; 
+   line-height: 0.1em;
+   margin: 20px 0; 
+   color: rgb(163, 163, 163);
+   font-size: 13px;
+}
+
+.Register form .question span {
+    background:#fff; 
+    padding:0 10px; 
+}
+
+.Register form a {
+  width: 100%;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: white;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  text-decoration: none;
+}
+.Register form a:hover {
+  color: var(--main-color);
+}
+.Register .mobile-code {
+  background-color: white;
+}
