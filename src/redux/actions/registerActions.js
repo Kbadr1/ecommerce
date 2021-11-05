@@ -21,10 +21,9 @@ export const registerSuccess = (res) => {
   };
 };
 
-export const registerError = (err) => {
+export const registerError = () => {
   return {
     type: "REGISTER_ERROR",
-    payload: err,
   };
 };
 
@@ -42,8 +41,8 @@ export const register = (username, password, email, phone, history) => {
         dispatch(registerSuccess(res));
         history.push("/login");
       })
-      .catch((err) => {
-        dispatch(registerError(err));
+      .catch(() => {
+        dispatch(registerError());
       });
   };
 };

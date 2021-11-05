@@ -14,17 +14,19 @@ import { getUser } from "./redux/actions/userActions";
 function App() {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-
+  const isAuthinticated = useSelector(
+    (state) => state.authReducer.isAuthinticated
+  );
   const currentLanguage = useSelector(
     (state) => state.i18Reducer.currentLanguage
   );
 
   useEffect(() => {
     dispatch(setCurrentLanguage());
-    dispatch(getUser());
+    isAuthinticated === true && dispatch(getUser());
     document.body.dir = currentLanguage.dir;
     document.title = t("app_title");
-  }, [currentLanguage, t, localStorage.getItem("token")]);
+  }, [currentLanguage, t, isAuthinticated]);
 
   return (
     <Router>

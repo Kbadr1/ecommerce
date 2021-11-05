@@ -18,10 +18,9 @@ export const loginSuccess = (res) => {
   };
 };
 
-export const loginError = (err) => {
+export const loginError = () => {
   return {
     type: "LOGIN_ERROR",
-    payload: err,
   };
 };
 
@@ -35,8 +34,8 @@ export const login = (identifier, password, history) => {
         localStorage.setItem("token", res.data.jwt);
         history.push("/");
       })
-      .catch((err) => {
-        dispatch(loginError(err));
+      .catch(() => {
+        dispatch(loginError());
       });
   };
 };

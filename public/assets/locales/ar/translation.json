@@ -15,5 +15,38 @@
   "home_carousel_button": "تسوق الآن",
   "two_features_feature1_description": "الأغذية العضوية البرسيمو المجففة",
   "two_features_feature2_description": "الأغذية العضوية البرسيمو المجففة",
-  "two_features_button": "تسوق الآن"
+  "two_features_button": "تسوق الآن",
+  "login": {
+    "title": "تسجيل الدخول إلى حسابك",
+    "error": "اسم المستخدم أو كلمة المرور خاطئة!",
+    "email_label": "البريد لالكتروني او اسم المستخدم",
+    "email_error": "الرجاء إدخال البريد الالكتروني او اسم المستخدم",
+    "password_label": "كلمة المرور",
+    "password_error": "الرجاء إدخال كلمة المرور",
+    "login_button": "تسجيل الدخول",
+    "no_account": "ليس لديك حساب؟",
+    "register_button": "التسجيل"
+  },
+  "register": {
+    "title": "إنشاء حساب جديد",
+    "error": "البريد الإلكتروني مسجل بالفعل!",
+    "firstname_label": "الاسم الاول",
+    "lastname_label": "اللقب",
+    "phone_code_label": "+ 20",
+    "phone_label": "رقم الهاتف",
+    "email_label": "البريد الإلكتروني",
+    "password_label": "كلمة المرور",
+    "create_new": "إنشاء حساب جديد",
+    "already_member": "لديك حساب بالفعل؟",
+    "login_button": "تسجيل الدخول",
+    "required": " Required",
+    "phone_error": "الرجاء إدخال رقم هاتف صحيح.",
+    "email_error": "الرجاء إدخال بريد إلكتروني صحيح",
+    "password_error": "كلمة مرور قصيرة - 8 احرف على الأقل.",
+    "firstname_error": "يرجى إدخال الاسم الاول.",
+    "lastname_error": "يرجى إدخال الاسم الاخير.",
+    "phone_req_error": "يرجى إدخال رقم الهاتف.",
+    "email_req_error": "يرجى إدخال البريد الإلكتروني.",
+    "password_req_error": "يرجى إدخال كلمة المرور."
+  }
 }

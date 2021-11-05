@@ -42,7 +42,7 @@ const MainNavbar = () => {
   const isAuthinticated = useSelector(
     (state) => state.authReducer.isAuthinticated
   );
-  const user = useSelector((state) => state.userReducer.user);
+  const user = useSelector((state) => state.authReducer.user);
 
   useEffect(() => {
     document.addEventListener("scroll", manageNavbarPosition);
@@ -94,21 +94,44 @@ const MainNavbar = () => {
             <li className="nav-item">
               {isAuthinticated === false && (
                 <Link className="nav-link px-3" to="/login">
-                  <i className="bi bi-person-circle"></i>
+                  <i className="bi bi-person-circle"></i>{" "}
                   {t("mainNavbar_login")}
                 </Link>
               )}
+              {/* {isAuthinticated === true && (
+                <button
+                  className="btn nav-link px-3"
+                  onClick={() => dispatch(logout())}
+                >
+                  Logout
+                </button>
+              )} */}
               {isAuthinticated === true && (
-                <li className="nav-item">
-                  <button
-                    className="btn nav-link px-3"
-                    onClick={() => dispatch(logout())}
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
-                    logout
-                  </button>
+                    <i className="bi bi-person-circle"></i> {user.username}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <button
+                        className="btn nav-link px-3"
+                        onClick={() => dispatch(logout())}
+                      >
+                        Logout
+                      </button>
+                    </li>
+                  </ul>
                 </li>
               )}
             </li>
+
             <li className="nav-item">
               <Link className={`nav-link cart-link ${cartPadding}`} to="#">
                 <i className="bi bi-cart3"></i> {t("mainNavbar_cart")}

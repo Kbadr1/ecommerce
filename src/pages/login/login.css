@@ -83,3 +83,32 @@
   color: var(--main-color);
 }
 
+.Login .login-error {
+  text-align: center;
+  width: 100%;
+  color: #dc3545;
+  background-color: #f3c8cc;
+  border-radius: 5px;
+}
+
+.Login .login-error  h6 {
+  padding: 10px 0;
+}
+
+.Login .ar-label {
+  left: unset;
+  right: 0;
+}
+
+.Login .en-label {
+  left: 0;
+  right: unset;
+}
+
+
+.ar-invalid-icon.is-invalid, .was-validated .ar-invalid-icon:invalid{
+  background-position: left calc(.375em + .1875rem) center;
+}
+.en-invalid-icon.is-invalid, .was-validated .en-invalid-icon:invalid{
+  background-position: right calc(.375em + .1875rem) center;
+}

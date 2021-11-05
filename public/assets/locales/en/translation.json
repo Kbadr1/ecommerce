@@ -15,5 +15,38 @@
   "home_carousel_button": "shop now",
   "two_features_feature1_description": "Organics Food Dried Persimmo",
   "two_features_feature2_description": "Organics Food Dried Persimmo",
-  "two_features_button": "shop now"
+  "two_features_button": "shop now",
+  "login": {
+    "title": "Login to your account",
+    "error": "Wrong E-mail or Password !",
+    "email_label": "Username or Email",
+    "email_error": "Required",
+    "password_label": "Password",
+    "password_error": "Required",
+    "login_button": "login",
+    "no_account": "Don't have an account?",
+    "register_button": "Register"
+  },
+  "register": {
+    "title": "Create a new account",
+    "error": "E-mail already registered!",
+    "firstname_label": "First name",
+    "lastname_label": "Last name",
+    "phone_code_label": "+ 20",
+    "phone_label": "Mobile number",
+    "email_label": "E-Mail address",
+    "password_label": "Password",
+    "create_new": "CREATE A NEW ACCOUNT",
+    "already_member": "Already Have an account?",
+    "login_button": "Login",
+    "required": " Required",
+    "phone_error": "please enter a valid phone number.",
+    "email_error": "Please enter a valid E-mail.",
+    "password_error": "Password is too short - should be 8 chars minimum.",
+    "firstname_error": "Required",
+    "lastname_error": "Required",
+    "phone_req_error": "Required",
+    "email_req_error": "Required",
+    "password_req_error": "Required"
+  }
 }
