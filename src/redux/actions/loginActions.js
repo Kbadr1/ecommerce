@@ -28,7 +28,10 @@ export const login = (identifier, password, history) => {
   return (dispatch) => {
     dispatch(loginRequest());
     axios
-      .post("http://localhost:1337/auth/local", { identifier, password })
+      .post("https://whispering-garden-92445.herokuapp.com/auth/local", {
+        identifier,
+        password,
+      })
       .then((res) => {
         dispatch(loginSuccess(res));
         localStorage.setItem("token", res.data.jwt);

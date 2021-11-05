@@ -31,12 +31,15 @@ export const register = (username, password, email, phone, history) => {
   return (dispatch) => {
     dispatch(registerRequest());
     axios
-      .post("http://localhost:1337/auth/local/register", {
-        username,
-        password,
-        email,
-        phone,
-      })
+      .post(
+        "https://whispering-garden-92445.herokuapp.com/auth/local/register",
+        {
+          username,
+          password,
+          email,
+          phone,
+        }
+      )
       .then((res) => {
         dispatch(registerSuccess(res));
         history.push("/login");

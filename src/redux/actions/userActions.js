@@ -23,7 +23,7 @@ export const getUser = () => {
       },
     };
     axios
-      .get("http://localhost:1337/users/me", config)
+      .get("https://whispering-garden-92445.herokuapp.com/users/me", config)
       .then((res) => {
         dispatch(getUserSuccess(res));
       })
