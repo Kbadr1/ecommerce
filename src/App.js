@@ -1,19 +1,17 @@
 import "./styles/App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
-import Home from "./pages/home/Home";
 import { useEffect } from "react";
+import { Home, Deals, Cart, Login, Register } from "./pages/index";
+import Navbar from "./components/navbar/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
-import { useTranslation } from "react-i18next";
-import { setCurrentLanguage } from "./redux/actions";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
 import { getUser } from "./redux/actions/userActions";
+import { setCurrentLanguage } from "./redux/actions";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const dispatch = useDispatch();
   const { t } = useTranslation();
+
   const isAuthinticated = useSelector(
     (state) => state.authReducer.isAuthinticated
   );
@@ -23,10 +21,13 @@ function App() {
 
   useEffect(() => {
     dispatch(setCurrentLanguage());
-    isAuthinticated === true && dispatch(getUser());
     document.body.dir = currentLanguage.dir;
     document.title = t("app_title");
-  }, [currentLanguage, t, isAuthinticated]);
+  }, [currentLanguage, t]);
+
+  useEffect(() => {
+    isAuthinticated === true && dispatch(getUser());
+  }, [isAuthinticated]);
 
   return (
     <Router>
@@ -36,6 +37,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/deals" component={Deals} />
         </Switch>
       </div>
     </Router>

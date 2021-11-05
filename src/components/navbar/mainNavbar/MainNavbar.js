@@ -5,7 +5,6 @@ import logoImage from "../../../images/logo.png";
 
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../redux/actions/logoutActions";
-import cookies from "js-cookie";
 import { useTranslation } from "react-i18next";
 
 const MainNavbar = () => {
@@ -87,7 +86,7 @@ const MainNavbar = () => {
           </form>
           <ul className="navbar-nav ms-auto  mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link px-3" to="#">
+              <Link className="nav-link px-3" to="/deals">
                 {t("mainNavbar_Deals")}
               </Link>
             </li>
@@ -98,14 +97,6 @@ const MainNavbar = () => {
                   {t("mainNavbar_login")}
                 </Link>
               )}
-              {/* {isAuthinticated === true && (
-                <button
-                  className="btn nav-link px-3"
-                  onClick={() => dispatch(logout())}
-                >
-                  Logout
-                </button>
-              )} */}
               {isAuthinticated === true && (
                 <li class="nav-item dropdown">
                   <a
@@ -133,7 +124,7 @@ const MainNavbar = () => {
             </li>
 
             <li className="nav-item">
-              <Link className={`nav-link cart-link ${cartPadding}`} to="#">
+              <Link className={`nav-link cart-link ${cartPadding}`} to="/cart">
                 <i className="bi bi-cart3"></i> {t("mainNavbar_cart")}
               </Link>
             </li>

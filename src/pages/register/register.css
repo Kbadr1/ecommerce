@@ -9,15 +9,17 @@
 }
 
 .Register form {
-  width: 540px;
+  width: 500px;
   background-color: white;
   border-radius: 10px;
-  border: 1px solid rgb(221, 221, 221);
-  padding: 50px 100px;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 40px 75px;
 }
 
 .Register form h5 {
   font-weight: 700;
+  color: black;
+  margin: 0 0 10px 0;
 }
 
 .Register form label {
@@ -104,6 +106,7 @@
   color: #dc3545;
   background-color: #f3c8cc;
   border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 .Register .register-error  h6 {
