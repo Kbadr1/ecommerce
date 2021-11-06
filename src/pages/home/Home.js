@@ -7,6 +7,9 @@ import featureImage1 from "../../images/home/two-features1.jpg";
 import featureImage2 from "../../images/home/two-features2.jpg";
 
 import { useSelector } from "react-redux";
+import Offers from "./Offers";
+import TwoFeatures from "./TwoFeatures";
+import Carousel from "./Carousel";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -36,107 +39,23 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <div className="carousel-container">
-        <div className="container ">
-          {/* carousel */}
-          <div
-            id="carouselExampleCaptions"
-            className="carousel slide carousel-fade"
-            data-bs-ride="carousel"
-          >
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img src={carouselImage1} className="d-block w-100" alt="..." />
-                <div
-                  className={`carousel-caption d-none d-md-block ${carouselText}`}
-                >
-                  <h1>{t("home_carousel_1_title")}</h1>
-                  <p>{t("home_carousel_1_description")}</p>
-                  <button className="btn">{t("home_carousel_button")}</button>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img src={carouselImage2} className="d-block w-100" alt="..." />
-                <div
-                  className={`carousel-caption d-none d-md-block ${carouselText}`}
-                >
-                  <h1>{t("home_carousel_2_title")}</h1>
-                  <p>{t("home_carousel_2_description")}</p>
-                  <button className="btn">{t("home_carousel_button")}</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Carousel */}
+      <Carousel
+        carouselImage1={carouselImage1}
+        carouselImage2={carouselImage2}
+        carouselText={carouselText}
+        t={t}
+      />
       {/* two-features */}
-      <div className="two-features container">
-        <div className="row">
-          <div className="col-6 feature">
-            <img
-              src={featureImage1}
-              className={`${twoFeaturesImageDir}`}
-              alt=""
-            />
-            <div className={`${featureDescription}`}>
-              <h3>{t("two_features_feature1_description")}</h3>
-              <button className="btn">{t("two_features_button")}</button>
-            </div>
-          </div>
-          <div className="col-6 feature">
-            <img
-              src={featureImage2}
-              className={`${twoFeaturesImageDir}`}
-              alt=""
-            />
-            <div className={`${featureDescription}`}>
-              <h3>{t("two_features_feature2_description")}</h3>
-              <button className="btn">{t("two_features_button")}</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TwoFeatures
+        featureImage1={featureImage1}
+        featureImage2={featureImage2}
+        t={t}
+        twoFeaturesImageDir={twoFeaturesImageDir}
+        featureDescription={featureDescription}
+      />
       {/* offers */}
-      <div className="offers container">
-        <div className="row">
-          <div className="col-12 col-sm-6 col-lg-3 offer-box">
-            <div className="offers-icon">
-              <i className="bi bi-gift"></i>
-            </div>
-            <div className="offers-description">
-              <h5>Win $100 To Shop</h5>
-              <p>Passage Of Lorem Ipsum, You Need To Be Amet Embarrassing.</p>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-lg-3 offer-box">
-            <div className="offers-icon">
-              <i className="bi bi-coin"></i>
-            </div>
-            <div className="offers-description">
-              <h5>Win $100 To Shop</h5>
-              <p>Passage Of Lorem Ipsum, You Need To Be Amet Embarrassing.</p>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-lg-3  offer-box">
-            <div className="offers-icon">
-              <i className="bi bi-truck"></i>
-            </div>
-            <div className="offers-description">
-              <h5>Win $100 To Shop</h5>
-              <p>Passage Of Lorem Ipsum, You Need To Be Amet Embarrassing.</p>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-lg-3  offer-box">
-            <div className="offers-icon">
-              <i className="bi bi-headset"></i>
-            </div>
-            <div className="offers-description">
-              <h5>Win $100 To Shop</h5>
-              <p>Passage Of Lorem Ipsum, You Need To Be Amet Embarrassing.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Offers t={t} />
       {/* top products */}
       <div className="top-products container">
         <h3>Top Products</h3>
