@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./redux/actions/userActions";
 import { setCurrentLanguage } from "./redux/actions";
 import { useTranslation } from "react-i18next";
+import Shop from "./pages/shop/Shop";
+import Category from "./pages/category/Category";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +41,8 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/cart" component={Cart} />
           <Route path="/deals" component={Deals} />
+          <Route path="/shop" component={Shop} />
+          <Route path="/category/:id" component={Category} />
         </Switch>
       </div>
     </Router>

@@ -1,0 +1,33 @@
+@import "../../styles/variables.css";
+
+.categoriesList {
+  border-radius: 10px;
+}
+.categoriesList .title {
+  color: white;
+  background-color: var(--main-color);
+  border-radius: 10px 10px 0 0;
+  font-weight: 500;
+}
+.categoriesList ul{
+  list-style: none;
+  padding: 0;
+  border:  solid #EEEEEE;
+  border-width: 0 1px 0 1px;
+  border-radius: 10px 10px 4px 4px;
+}
+.categoriesList ul li{
+  border-bottom: 1px solid #EEEEEE;
+  padding: 12px;
+  font-size: 13px; 
+  font-weight: 500
+}
+
+.categoriesList a {
+  text-decoration: none;
+  color: #555;
+}
+.categoriesList a:hover {
+  color: var(--main-color);
+  transition: ease-in-out 0.2s;
+}

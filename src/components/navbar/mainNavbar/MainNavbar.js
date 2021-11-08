@@ -86,15 +86,20 @@ const MainNavbar = () => {
           </form>
           <ul className="navbar-nav ms-auto  mb-2 mb-lg-0">
             <li className="nav-item">
+              <Link className="nav-link px-3" to="/shop">
+                {t("mainNavbar.products")}
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link px-3" to="/deals">
-                {t("mainNavbar_Deals")}
+                {t("mainNavbar.Deals")}
               </Link>
             </li>
             <li className="nav-item">
               {isAuthinticated === false && (
                 <Link className="nav-link px-3" to="/login">
                   <i className="bi bi-person-circle"></i>{" "}
-                  {t("mainNavbar_login")}
+                  {t("mainNavbar.login")}
                 </Link>
               )}
               {isAuthinticated === true && (
@@ -125,7 +130,7 @@ const MainNavbar = () => {
 
             <li className="nav-item">
               <Link className={`nav-link cart-link ${cartPadding}`} to="/cart">
-                <i className="bi bi-cart3"></i> {t("mainNavbar_cart")}
+                <i className="bi bi-cart3"></i> {t("mainNavbar.cart")}
               </Link>
             </li>
           </ul>

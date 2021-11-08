@@ -4,13 +4,17 @@
   "navbar_phone": "(+20) 10 24 81 84 33",
   "secondaryNavbar_fast": "Fast & Free Delivery",
   "secondaryNavbar_returns": "Free Returns",
-  "mainNavbar_cart": "cart",
-  "mainNavbar_login": "Login & Register",
-  "mainNavbar_Deals": "Deals",
+
   "mainNavbar_input_placeholder": "Search Products",
   "two_features_feature1_description": "Organics Food Dried Persimmo",
   "two_features_feature2_description": "Organics Food Dried Persimmo",
   "two_features_button": "shop now",
+  "mainNavbar": {
+    "products": "products",
+    "cart": "cart",
+    "login": "Login & Register",
+    "Deals": "Deals"
+  },
   "home": {
     "carousel_1_title": "Organic fresh fruits for your health",
     "carousel_1_description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris eleifend sagittis mollis Nulla finibus arcu eu tortor. gravida aliquet",
@@ -25,6 +29,12 @@
     "offer3_description": "Passage Of Lorem Ipsum, You Need To Be Amet Embarrassing.",
     "offer4_title": "24/7 Free Support",
     "offer4_description": "Passage Of Lorem Ipsum, You Need To Be Amet Embarrassing."
+  },
+  "shop": {
+    "all_products": "All Products",
+    "category": "Category",
+    "price": "EGP/KG",
+    "add_button": "Add"
   },
   "login": {
     "title": "Login to your account",

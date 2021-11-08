@@ -30,9 +30,10 @@ const intialState = {
       dir: "rtl",
     },
   ],
-  currentLanguage: languages.find(
-    (language) => language.code === Cookies.get("i18next")
-  ),
+  // currentLanguage: languages.find(
+  //   (language) => language.code === Cookies.get("i18next")
+  // ),
+  currentLanguage: languages[0],
 };
 
 export const i18Reducer = (state = intialState, { payload, type }) => {

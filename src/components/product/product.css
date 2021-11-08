@@ -1,0 +1,51 @@
+@import "../../styles//variables.css";
+
+.Product {
+  border: 1px solid #e6e5e5;
+  border-radius: 10px;
+  margin-bottom: 22px;
+}
+.Product .product-img img {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+.Product .product-info .product-category {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: gray;
+  text-transform: capitalize;
+}
+.Product .product-info .product-currency {
+  font-size: 12px;
+}
+.Product .product-info .product-name {
+  margin-bottom: 10px;
+}
+.Product .product-info .product-purchase {
+  padding: 10px 15px;
+  border-top: 1px solid #EEEEEE;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Product .product-info .product-description {
+  padding: 0 15px;
+}
+.Product .product-info .product-purchase .dropdown .dropdown-toggle {
+  padding: 0;
+  /* border: 1px solid #EEEEEE;
+  padding: 3px 10px; */
+  font-size: 15px;
+}
+.Product .product-info .product-purchase .dropdown .dropdown-toggle::after {
+  display: none;
+}
+.Product .product-info .product-purchase .add {
+  padding: 3px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  background-color: var(--main-color);
+}

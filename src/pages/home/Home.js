@@ -6,17 +6,20 @@ import carouselImage2 from "../../images/home/carousel-img2.jpg";
 import featureImage1 from "../../images/home/two-features1.jpg";
 import featureImage2 from "../../images/home/two-features2.jpg";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Offers from "./Offers";
 import TwoFeatures from "./TwoFeatures";
 import Carousel from "./Carousel";
+import { productsFetch } from "../../redux/actions/productsActions";
 
 const Home = () => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
 
   const currentLanguage = useSelector(
     (state) => state.i18Reducer.currentLanguage
   );
+  const products = useSelector((state) => state.productsReducer.products);
 
   const [carouselText, setCarouselText] = useState("");
   const [twoFeaturesImageDir, setTwoFeaturesImageDir] = useState("");
@@ -36,6 +39,10 @@ const Home = () => {
   useEffect(() => {
     manageStylesByLanguage();
   }, [currentLanguage]);
+
+  useEffect(() => {
+    dispatch(productsFetch());
+  }, []);
 
   return (
     <div className="Home">
@@ -110,7 +117,18 @@ const Home = () => {
             role="tabpanel"
             aria-labelledby="pills-home-tab"
           >
-            a
+            {products.map((product) => (
+              <div>
+                <img src={product.image_url} alt="" />
+                <h2>
+                  {currentLanguage.dir === "ltr"
+                    ? product.en_name
+                    : product.ar_name}
+                </h2>
+                <h5>{product.count}</h5>
+                <h6>{product.price}</h6>
+              </div>
+            ))}
           </div>
           <div
             className="tab-pane fade"
