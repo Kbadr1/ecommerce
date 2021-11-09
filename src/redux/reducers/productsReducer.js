@@ -1,6 +1,6 @@
 const intialState = {
-  loading: false,
-  error: null,
+  productsLoading: false,
+  productsError: false,
   products: [],
 };
 
@@ -9,20 +9,19 @@ export const productsReducer = (state = intialState, { type, payload }) => {
     case "PRODUCTS_FETCH_REQUEST":
       return {
         ...state,
-        loading: true,
-        error: null,
+        productsLoading: true,
       };
     case "PRODUCTS_FETCH_SUCCESS":
       return {
         ...state,
-        loading: false,
+        productsLoading: false,
         products: payload.products,
       };
     case "PRODUCTS_FETCH_ERROR":
       return {
         ...state,
-        loading: false,
-        error: true,
+        productsLoading: false,
+        productsError: true,
       };
     default:
       return state;

@@ -41,11 +41,12 @@ export const categoryFetchRequest = () => {
   };
 };
 
-export const categoryFetchSuccess = (category) => {
+export const categoryFetchSuccess = (category, categoryProducts) => {
   return {
     type: "CATEGORY_FETCH_SUCCESS",
     payload: {
       category,
+      categoryProducts,
     },
   };
 };
@@ -62,7 +63,7 @@ export const categoryFetch = (id) => {
     axios
       .get(`https://whispering-garden-92445.herokuapp.com/categories/${id}`)
       .then((res) => {
-        dispatch(categoryFetchSuccess(res.data));
+        dispatch(categoryFetchSuccess(res.data, res.data.products));
       })
       .catch((err) => {
         dispatch(categoryFetchError());

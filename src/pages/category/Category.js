@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import "./category.css";
@@ -8,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Product from "../../components/product/Product";
 import CategoriesList from "../../components/categoriesList/CategoriesList";
+import ProductsLoading from "../../components/productsLoading/ProductsLoading";
 
 const Category = () => {
   const { id } = useParams();
@@ -18,6 +18,9 @@ const Category = () => {
     (state) => state.i18Reducer.currentLanguage
   );
   const category = useSelector((state) => state.categoriesReducer.category);
+  const categoryProducts = useSelector(
+    (state) => state.categoriesReducer.categoryProducts
+  );
   const categoryLoading = useSelector(
     (state) => state.categoriesReducer.categoryLoading
   );
@@ -58,10 +61,10 @@ const Category = () => {
         <div className="col-md-8 col-lg-9">
           <div className="row">
             {categoryLoading === true ? (
-              <div>loading</div>
+              <ProductsLoading />
             ) : (
               <>
-                {category.products.map((product) => (
+                {categoryProducts.map((product) => (
                   <div key={product.id} className="col-6 col-md-6 col-lg-4">
                     <Product product={product} />
                   </div>

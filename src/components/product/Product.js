@@ -30,44 +30,44 @@ const Product = ({ product }) => {
           </h6>
         </div>
         <div className="product-purchase">
-          <div class="dropdown">
+          <div className="dropdown">
             <button
-              class="btn btn-sm dropdown-toggle"
+              className="btn btn-sm dropdown-toggle"
               type="button"
               id="dropdownMenuButton1"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              1.00 KG <i class="bi bi-chevron-down"></i>
+              1.00 KG <i className="bi bi-chevron-down"></i>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   0.50 kg
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   1.00 kg
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   1.50 kg
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   2.00 kg
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   2.50 kg
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   3.00 kg
                 </a>
               </li>

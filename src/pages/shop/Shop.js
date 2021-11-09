@@ -6,6 +6,7 @@ import { productsFetch } from "../../redux/actions/productsActions";
 import Product from "../../components/product/Product";
 import CategoriesList from "../../components/categoriesList/CategoriesList";
 import { useTranslation } from "react-i18next";
+import ProductsLoading from "../../components/productsLoading/ProductsLoading";
 
 const Shop = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,9 @@ const Shop = () => {
   const products = useSelector((state) => state.productsReducer.products);
   const currentLanguage = useSelector(
     (state) => state.i18Reducer.currentLanguage
+  );
+  const productsLoading = useSelector(
+    (state) => state.productsReducer.productsLoading
   );
 
   useEffect(() => {
@@ -39,11 +43,17 @@ const Shop = () => {
         <CategoriesList />
         <div className="col-md-8 col-lg-9">
           <div className="row">
-            {products.map((product) => (
-              <div key={product.id} className="col-6 col-md-6 col-lg-4">
-                <Product product={product} />
-              </div>
-            ))}
+            {productsLoading === true ? (
+              <ProductsLoading />
+            ) : (
+              <>
+                {products.map((product) => (
+                  <div key={product.id} className="col-6 col-md-6 col-lg-4">
+                    <Product product={product} />
+                  </div>
+                ))}
+              </>
+            )}
           </div>
         </div>
       </div>

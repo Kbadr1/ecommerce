@@ -5,6 +5,7 @@ const intialState = {
   categoryLoading: false,
   categoryError: false,
   category: {},
+  categoryProducts: [],
 };
 
 export const categoriesReducer = (state = intialState, { type, payload }) => {
@@ -36,6 +37,7 @@ export const categoriesReducer = (state = intialState, { type, payload }) => {
         ...state,
         categoryLoading: false,
         category: payload.category,
+        categoryProducts: payload.categoryProducts,
       };
     case "CATEGORY_FETCH_ERROR":
       return {

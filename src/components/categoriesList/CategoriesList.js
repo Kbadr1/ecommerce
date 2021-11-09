@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { categoriesFetch } from "../../redux/actions/categoriesActions";
+import CategoriesListLoading from "../categoriesListLoading/CategoriesListLoading";
 
 const CategoriesList = ({}) => {
   const { t } = useTranslation();
@@ -12,6 +13,9 @@ const CategoriesList = ({}) => {
     (state) => state.i18Reducer.currentLanguage
   );
   const categories = useSelector((state) => state.categoriesReducer.categories);
+  const categoriesLoading = useSelector(
+    (state) => state.categoriesReducer.categoriesLoading
+  );
 
   useEffect(() => {
     dispatch(categoriesFetch());
@@ -21,14 +25,18 @@ const CategoriesList = ({}) => {
     <div className="d-none d-md-block col-md-4 col-lg-3 categoriesList">
       <ul>
         <li className="title">{t("shop.category")}</li>
-        {categories.map(({ id, products, en_name, ar_name }) => (
-          <li key={id}>
-            <NavLink to={`/category/${id}`}>
-              {currentLanguage.code === "en" ? en_name : ar_name} (
-              {products.length})
-            </NavLink>
-          </li>
-        ))}
+        {categoriesLoading === true ? (
+          <CategoriesListLoading />
+        ) : (
+          categories.map(({ id, products, en_name, ar_name }) => (
+            <li key={id}>
+              <NavLink to={`/category/${id}`}>
+                {currentLanguage.code === "en" ? en_name : ar_name} (
+                {products.length})
+              </NavLink>
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );
