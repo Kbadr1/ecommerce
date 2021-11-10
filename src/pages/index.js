@@ -3,5 +3,8 @@ import Cart from "./cart/Cart";
 import Deals from "./deals/Deals";
 import Login from "./login/Login";
 import Register from "./register/Register";
+import Shop from "./shop/Shop";
+import Category from "./category/Category";
+import Orders from "./orders/Orders";
 
-export { Home, Cart, Deals, Login, Register };
+export { Home, Cart, Deals, Login, Register, Shop, Category, Orders };

@@ -1,15 +1,21 @@
 import "./styles/App.css";
 import { useEffect } from "react";
-import { Home, Deals, Cart, Login, Register } from "./pages/index";
+import {
+  Home,
+  Deals,
+  Cart,
+  Login,
+  Register,
+  Shop,
+  Category,
+  Orders,
+} from "./pages/index";
 import Navbar from "./components/navbar/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./redux/actions/userActions";
 import { setCurrentLanguage } from "./redux/actions";
 import { useTranslation } from "react-i18next";
-import Shop from "./pages/shop/Shop";
-import Category from "./pages/category/Category";
-import Orders from "./pages/orders/Orders";
 
 function App() {
   const dispatch = useDispatch();

@@ -127,6 +127,7 @@ color: black;
 }
 .top-products .nav-pills {
   justify-content: center;
+  padding-bottom: 30px;
 }
 .top-products .nav-link {
   color: black;

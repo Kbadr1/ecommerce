@@ -30,7 +30,11 @@
     "offer3_title": "Free Worldwide Shipping",
     "offer3_description": "Passage Of Lorem Ipsum, You Need To Be Amet Embarrassing.",
     "offer4_title": "24/7 Free Support",
-    "offer4_description": "Passage Of Lorem Ipsum, You Need To Be Amet Embarrassing."
+    "offer4_description": "Passage Of Lorem Ipsum, You Need To Be Amet Embarrassing.",
+    "top_products": "Top Products",
+    "latest": "Latest",
+    "best_sellers": "BestSeller",
+    "featured": "Featured"
   },
   "shop": {
     "all_products": "All Products",
