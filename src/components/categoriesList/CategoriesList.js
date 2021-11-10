@@ -30,7 +30,7 @@ const CategoriesList = ({}) => {
         ) : (
           categories.map(({ id, products, en_name, ar_name }) => (
             <li key={id}>
-              <NavLink to={`/category/${id}`}>
+              <NavLink activeClassName="active-category" to={`/category/${id}`}>
                 {currentLanguage.code === "en" ? en_name : ar_name} (
                 {products.length})
               </NavLink>

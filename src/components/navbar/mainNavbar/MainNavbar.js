@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./mainNavbar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logoImage from "../../../images/logo.png";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -86,23 +86,34 @@ const MainNavbar = () => {
           </form>
           <ul className="navbar-nav ms-auto  mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link px-3" to="/shop">
+              <NavLink
+                activeClassName="active-link"
+                className="nav-link px-3"
+                to="/shop"
+              >
                 {t("mainNavbar.products")}
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link px-3" to="/deals">
+              <NavLink
+                activeClassName="active-link"
+                className="nav-link px-3"
+                to="/deals"
+              >
                 {t("mainNavbar.Deals")}
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              {isAuthinticated === false && (
-                <Link className="nav-link px-3" to="/login">
+              {isAuthinticated === false ? (
+                <NavLink
+                  activeClassName="active-link"
+                  className="nav-link px-3"
+                  to="/login"
+                >
                   <i className="bi bi-person-circle"></i>{" "}
                   {t("mainNavbar.login")}
-                </Link>
-              )}
-              {isAuthinticated === true && (
+                </NavLink>
+              ) : (
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
@@ -112,15 +123,21 @@ const MainNavbar = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <i className="bi bi-person-circle"></i> {user.username}
+                    <i className="bi bi-person-circle"></i> {user.username}{" "}
+                    <i class="bi bi-chevron-down"></i>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li>
+                      <Link className="nav-link" to="/orders">
+                        {t("mainNavbar.orders")}
+                      </Link>
+                    </li>
+                    <li>
                       <button
-                        className="btn nav-link px-3"
+                        className="btn nav-link"
                         onClick={() => dispatch(logout())}
                       >
-                        Logout
+                        {t("mainNavbar.logout")}
                       </button>
                     </li>
                   </ul>
@@ -129,9 +146,13 @@ const MainNavbar = () => {
             </li>
 
             <li className="nav-item">
-              <Link className={`nav-link cart-link ${cartPadding}`} to="/cart">
+              <NavLink
+                activeClassName="active-link"
+                className={`nav-link cart-link ${cartPadding}`}
+                to="/cart"
+              >
                 <i className="bi bi-cart3"></i> {t("mainNavbar.cart")}
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

@@ -13,7 +13,9 @@
     "products": "products",
     "cart": "cart",
     "login": "Login & Register",
-    "Deals": "Deals"
+    "Deals": "Deals",
+    "logout": "Logout",
+    "orders": "My orders"
   },
   "home": {
     "carousel_1_title": "Organic fresh fruits for your health",

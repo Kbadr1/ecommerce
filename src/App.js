@@ -9,6 +9,7 @@ import { setCurrentLanguage } from "./redux/actions";
 import { useTranslation } from "react-i18next";
 import Shop from "./pages/shop/Shop";
 import Category from "./pages/category/Category";
+import Orders from "./pages/orders/Orders";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function App() {
           <Route path="/deals" component={Deals} />
           <Route path="/shop" component={Shop} />
           <Route path="/category/:id" component={Category} />
+          <Route path="/orders" component={Orders} />
         </Switch>
       </div>
     </Router>

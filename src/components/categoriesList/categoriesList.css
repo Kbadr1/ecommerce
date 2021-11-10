@@ -31,3 +31,6 @@
   color: var(--main-color);
   transition: ease-in-out 0.2s;
 }
+.categoriesList .active-category {
+  color: var(--main-color);
+}
