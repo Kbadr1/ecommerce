@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./redux/actions/userActions";
 import { setCurrentLanguage } from "./redux/actions";
 import { useTranslation } from "react-i18next";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ function App() {
           <Route path="/category/:id" component={Category} />
           <Route path="/orders" component={Orders} />
         </Switch>
+        <ScrollToTop />
       </div>
     </Router>
   );

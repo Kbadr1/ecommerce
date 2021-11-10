@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "./product.css";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const { t } = useTranslation();
@@ -17,9 +18,11 @@ const Product = ({ product }) => {
       <div className="product-info">
         <div className="product-description">
           <p className="product-category">
-            {currentLanguage.code === "en"
-              ? product.category.en_name
-              : product.category.ar_name}
+            <Link to={`/category/${product.category.id}`}>
+              {currentLanguage.code === "en"
+                ? product.category.en_name
+                : product.category.ar_name}
+            </Link>
           </p>
           <h6 className="product-name">
             {currentLanguage.code === "en" ? product.en_name : product.ar_name}

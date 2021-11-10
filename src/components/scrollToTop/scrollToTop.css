@@ -1,0 +1,20 @@
+@import "../../styles/variables.css";
+
+.ScrollToTop div{
+  border-radius: 3px;
+  background-color: var(--main-color);
+  width: 40px;
+  height: 40px;
+  z-index: 9999;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+.ScrollToTop i {
+  width: 100%;
+  font-size: 25px;
+  padding: 0;
+  color: white;
+}

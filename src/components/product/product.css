@@ -13,8 +13,15 @@
 .Product .product-info .product-category {
   margin-bottom: 10px;
   font-size: 13px;
-  color: gray;
   text-transform: capitalize;
+}
+.Product .product-info .product-category a {
+  color: gray;
+  text-decoration: none;
+}
+.Product .product-info .product-category a:hover {
+  color: var(--main-color);
+  transition: ease-in-out 0.3s;
 }
 .Product .product-info .product-currency {
   font-size: 12px;
