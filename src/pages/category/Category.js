@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router";
 import "./category.css";
+import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { categoryFetch } from "../../redux/actions/categoriesActions";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import Product from "../../components/product/Product";
-import CategoriesList from "../../components/categoriesList/CategoriesList";
-import ProductsLoading from "../../components/productsLoading/ProductsLoading";
+import {
+  Product,
+  CategoriesList,
+  ProductsLoading,
+  PagePath,
+} from "../../components";
 
 const Category = () => {
   const { id } = useParams();
@@ -29,49 +31,32 @@ const Category = () => {
     dispatch(categoryFetch(id));
   }, [id]);
 
+  const allProducts =
+    categoryLoading === true ? (
+      <ProductsLoading columns="col-6 col-md-6 col-lg-4" />
+    ) : (
+      <>
+        {categoryProducts.map((product) => (
+          <div key={product.id} className="col-6 col-md-6 col-lg-4">
+            <Product product={product} />
+          </div>
+        ))}
+      </>
+    );
+
   return (
     <div className="Category container">
-      <div className="page-path">
-        <ul>
-          <li
-            className={
-              currentLanguage.dir === "ltr" ? "border-right" : "border-left"
-            }
-          >
-            <Link to="/">
-              <i className="bi bi-house-door-fill"></i>
-            </Link>
-          </li>
-          <li
-            className={
-              currentLanguage.dir === "ltr" ? "border-right" : "border-left"
-            }
-          >
-            <Link to="/shop">{t("shop.all_products")}</Link>
-          </li>
-          <li>
-            {currentLanguage.code === "en"
-              ? category.en_name
-              : category.ar_name}
-          </li>
-        </ul>
-      </div>
+      <PagePath
+        firstLink={"shop"}
+        firstLinkTitle={t("shop.all_products")}
+        currentPage={
+          currentLanguage.code === "en" ? category.en_name : category.ar_name
+        }
+      />
       <div className="row">
         <CategoriesList />
         <div className="col-md-8 col-lg-9">
-          <div className="row">
-            {categoryLoading === true ? (
-              <ProductsLoading />
-            ) : (
-              <>
-                {categoryProducts.map((product) => (
-                  <div key={product.id} className="col-6 col-md-6 col-lg-4">
-                    <Product product={product} />
-                  </div>
-                ))}
-              </>
-            )}
-          </div>
+          <div className="row">{allProducts}</div>
         </div>
       </div>
     </div>

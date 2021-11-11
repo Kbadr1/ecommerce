@@ -18,3 +18,10 @@
   padding: 0;
   color: white;
 }
+
+ /* hide scroll to top button on medium and small screens */
+@media screen and (max-width: 768px){
+  .ScrollToTop div {
+    display: none;
+  }
+}

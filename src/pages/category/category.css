@@ -3,32 +3,3 @@
 .Category {
   padding: 20px 0;
 }
-/* page-path */
-.Category .page-path {
-  background-color:#f7f7f7 ;
-  border-radius: 10px;
-  color: black;
-  margin-bottom: 20px;
-}
-.Category .page-path  ul {
-  list-style: none;
-  padding: 8px 0;
-  display: flex;
-  align-items: center;
-}
-.Category .page-path  li {
-  float: left;
-  padding: 0 12px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.Category .page-path a {
-  text-decoration: none;
-  color: black;
-}
-.Category .page-path .border-right {
-  border-right: 1px solid rgb(0, 0, 0);
-}
-.Category .page-path .border-left {
-  border-left: 1px solid rgb(0, 0, 0);
-}

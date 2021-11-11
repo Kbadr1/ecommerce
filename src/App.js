@@ -10,13 +10,12 @@ import {
   Category,
   Orders,
 } from "./pages/index";
-import Navbar from "./components/navbar/Navbar";
+import { Navbar, ScrollToTop } from "./components/index";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./redux/actions/userActions";
 import { setCurrentLanguage } from "./redux/actions";
 import { useTranslation } from "react-i18next";
-import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
   const dispatch = useDispatch();
