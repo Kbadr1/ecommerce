@@ -21,22 +21,31 @@ const CategoriesList = ({}) => {
     dispatch(categoriesFetch());
   }, []);
 
+  const allCategories =
+    categoriesLoading === true ? (
+      <CategoriesListLoading />
+    ) : (
+      categories
+        .sort((a, b) =>
+          currentLanguage.code === "en"
+            ? a.en_name.localeCompare(b.en_name)
+            : a.ar_name.localeCompare(b.ar_name)
+        )
+        .map(({ id, products, en_name, ar_name }) => (
+          <li key={id}>
+            <NavLink activeClassName="active-category" to={`/category/${id}`}>
+              {currentLanguage.code === "en" ? en_name : ar_name} (
+              {products.length})
+            </NavLink>
+          </li>
+        ))
+    );
+
   return (
     <div className="d-none d-md-block col-md-4 col-lg-3 categoriesList">
       <ul>
         <li className="title">{t("shop.category")}</li>
-        {categoriesLoading === true ? (
-          <CategoriesListLoading />
-        ) : (
-          categories.map(({ id, products, en_name, ar_name }) => (
-            <li key={id}>
-              <NavLink activeClassName="active-category" to={`/category/${id}`}>
-                {currentLanguage.code === "en" ? en_name : ar_name} (
-                {products.length})
-              </NavLink>
-            </li>
-          ))
-        )}
+        {allCategories}
       </ul>
     </div>
   );
