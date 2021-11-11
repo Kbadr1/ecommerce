@@ -114,9 +114,9 @@ const MainNavbar = () => {
                   {t("mainNavbar.login")}
                 </NavLink>
               ) : (
-                <li class="nav-item dropdown">
+                <li className="nav-item dropdown">
                   <a
-                    class="nav-link dropdown-toggle"
+                    className="nav-link dropdown-toggle"
                     href="#"
                     id="navbarDropdown"
                     role="button"
@@ -124,9 +124,12 @@ const MainNavbar = () => {
                     aria-expanded="false"
                   >
                     <i className="bi bi-person-circle"></i> {user.username}{" "}
-                    <i class="bi bi-chevron-down"></i>
+                    <i className="bi bi-chevron-down"></i>
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="navbarDropdown"
+                  >
                     <li>
                       <Link className="nav-link" to="/orders">
                         {t("mainNavbar.orders")}

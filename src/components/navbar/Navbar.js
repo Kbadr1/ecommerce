@@ -1,6 +1,5 @@
 import React from "react";
-import SecondaryNavbar from "./secondaryNavbar/SecondaryNavbar";
-import MainNavbar from "./mainNavbar/MainNavbar";
+import { SecondaryNavbar, MainNavbar } from "../index";
 
 const Navbar = () => {
   return (
