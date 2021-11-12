@@ -3,66 +3,79 @@
 .navbar {
   background-color: white!important;
   box-shadow: 0 1px 4px 1px rgb(0, 0, 0, 0.1);
+  text-transform: capitalize;
 }
-
-
+/* two icons (cart / user) on small and medium screens only */
+.MainNavbar .only-small-container i {
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+}
+.MainNavbar .only-small-container .username {
+  font-weight: 500;
+  color: var(--main-color);
+}
+.MainNavbar .small-logout {
+  color: rgb(199, 61, 61) !important;
+}
+/* toggle navbar button */
+.MainNavbar .navbar-toggler{
+  border: 0;
+  padding: 0;
+}
+.MainNavbar .navbar-toggler:focus{
+  box-shadow: none;
+  outline: none;
+  border: 0;
+}
+/* form & form elements (input / button) */
 .MainNavbar form {
   padding-right: 20px;
   padding-left: 20px;
   flex-grow: 1;
 }
-
 .MainNavbar form input {
-  /* border-radius: 5px 0px 0px 5px; */
+  border-radius: 0;
   border-color: var(--main-color);
   font-weight: 500;
   font-size: 13px;
   color: black;
 }
-
-.en-input {
-  border-radius: 5px 0px 0px 5px;
-}
-
-.en-button {
-  border-radius: 0px 5px 5px 0px;
-}
-
-.ar-input {
-  border-radius: 0px 5px 5px 0px;
-}
-.ar-button {
-  border-radius: 5px 0px 0px 5px;
-}
-
 .MainNavbar form input::placeholder {
   font-weight: 500;
   font-size: 13px;
   color: black;
   opacity: 0.6;
 }
-
 .MainNavbar form button {
+  border-radius: 0;
   color: white;
   background-color: var(--main-color);
   border-color: var(--main-color);
 }
-
 .MainNavbar form input:focus, .MainNavbar form button:focus {
   box-shadow: none;
   border-color: var(--main-color);
 }
-
 .MainNavbar form button:hover {
   background-color: var(--main-color);
   border-color: var(--main-color);
 } 
-
+/* (login / username) dropdown */
+.MainNavbar .dropdown-menu{
+  padding: 0;
+  text-align: unset;
+  min-width: 8rem;
+}
+.MainNavbar .dropdown-menu button{ 
+  width: 100%;
+  text-align: start;
+}
 .MainNavbar .dropdown .dropdown-toggle::after {
   display: none;
-
 }
-
+/* links */
 .MainNavbar .navbar-nav .nav-link {
   font-weight: 500;
   padding: 0.4rem 0;
@@ -71,7 +84,36 @@
 .MainNavbar .navbar-nav .nav-link:hover  {
   color: var(--main-color);
 }
-
 .MainNavbar .navbar-nav .nav-link:focus, .MainNavbar .navbar-nav .active-link{
   color: var(--secondary-color);
 }
+
+/* navbar slide from left on small and medium screens */
+/* @media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: white;
+    z-index: 11111;
+      position: fixed;
+      top: 126px;
+      left: 0;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      width: 75%;
+      height: 100%;
+  }
+
+  .navbar-collapse.collapsing {
+      left: -75%;
+      transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+      left: 0;
+      transition: left 300ms ease-in-out;
+  }
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+      transition: left 500ms ease-in-out;
+  }
+} */
