@@ -2,15 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Form = ({
-  loginSubmit,
-  loginError,
   t,
-  invalidIconDir,
   identifier,
   handleIdentifierChange,
-  labelDir,
   password,
   handlePasswordChange,
+  loginSubmit,
+  loginLoading,
+  loginError,
+  labelDir,
+  invalidIconDir,
 }) => {
   return (
     <form className="needs-validation" noValidate onSubmit={loginSubmit}>
@@ -49,7 +50,17 @@ const Form = ({
         <div className="invalid-feedback">{t("login.password_error")}</div>
       </div>
       <button className="btn login-button" type="submit">
-        {t("login.login_button")}
+        {loginLoading ? (
+          <>
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+          </>
+        ) : (
+          t("login.login_button")
+        )}
       </button>
       <p className="question">
         <span>{t("login.no_account")}</span>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,19 +7,21 @@ import { login } from "../../redux/actions/loginActions";
 import Form from "./Form";
 
 const Login = () => {
-  const [identifier, setIdentifier] = useState("");
-  const [password, setPassword] = useState("");
-  const [labelDir, setLabelDir] = useState("");
-  const [invalidIconDir, setInvalidIconDir] = useState("");
-
-  const loginError = useSelector((state) => state.authReducer.loginError);
-  const currentLanguage = useSelector(
-    (state) => state.i18Reducer.currentLanguage
-  );
-
   const dispatch = useDispatch();
   const history = useHistory();
   const { t } = useTranslation();
+
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [labelDir, setLabelDir] = useState("");
+  const [invalidIconDir, setInvalidIconDir] = useState("");
+
+  const currentLanguage = useSelector(
+    (state) => state.i18Reducer.currentLanguage
+  );
+  const loginLoading = useSelector((state) => state.authReducer.loginLoading);
+  const loginError = useSelector((state) => state.authReducer.loginError);
 
   const manageLabelDir = () => {
     if (currentLanguage.dir === "ltr") {
@@ -70,15 +71,16 @@ const Login = () => {
   return (
     <div className="Login container">
       <Form
-        loginSubmit={loginSubmit}
-        loginError={loginError}
         t={t}
-        invalidIconDir={invalidIconDir}
         identifier={identifier}
         handleIdentifierChange={handleIdentifierChange}
-        labelDir={labelDir}
         password={password}
         handlePasswordChange={handlePasswordChange}
+        loginSubmit={loginSubmit}
+        loginLoading={loginLoading}
+        loginError={loginError}
+        labelDir={labelDir}
+        invalidIconDir={invalidIconDir}
       />
     </div>
   );

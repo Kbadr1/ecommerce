@@ -43,22 +43,22 @@ const MainNavbar = () => {
     </button>
   ));
 
-  const [navbarPosition, setNavbarPosition] = useState("");
-  const manageNavbarPosition = () => {
-    if (window.scrollY > 29) {
-      setNavbarPosition("fixed-top");
-    } else {
-      setNavbarPosition("");
-    }
-  };
+  // const [navbarPosition, setNavbarPosition] = useState("");
+  // const manageNavbarPosition = () => {
+  //   if (window.scrollY > 29) {
+  //     setNavbarPosition("fixed-top");
+  //   } else {
+  //     setNavbarPosition("");
+  //   }
+  // };
 
-  useEffect(() => {
-    document.addEventListener("scroll", manageNavbarPosition);
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("scroll", manageNavbarPosition);
+  // }, []);
 
   return (
     <nav
-      className={`MainNavbar navbar navbar-expand-lg navbar-light bg-light ${navbarPosition}`}
+      className={`MainNavbar navbar navbar-expand-lg navbar-light bg-light `}
     >
       <div className="container">
         {/* logo */}

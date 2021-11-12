@@ -2,13 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Form = ({
-  registerSubmit,
-  registerError,
   t,
-  invalidIconDir,
   firstName,
   handleFirstName,
-  labelDir,
   lastName,
   handleLastName,
   phone,
@@ -17,6 +13,11 @@ const Form = ({
   handleEmailChange,
   password,
   handlePasswordChange,
+  registerSubmit,
+  registerLoading,
+  registerError,
+  labelDir,
+  invalidIconDir,
 }) => {
   return (
     <form className="needs-validation" noValidate onSubmit={registerSubmit}>
@@ -135,7 +136,17 @@ const Form = ({
       </div>
 
       <button className="btn login-button" type="submit">
-        {t("register.create_new")}
+        {registerLoading ? (
+          <>
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+          </>
+        ) : (
+          t("register.create_new")
+        )}
       </button>
       <p className="question">
         <span>{t("register.already_member")}</span>

@@ -1,18 +1,18 @@
 @import "../../styles//variables.css";
 
 .Login {
-  display: flex;
+   display: flex;
    justify-content:center ;
    align-items: center;
-   height: 80vh;
+   height: 100vh;
 }
 
 .Login form {
-  width: 500px;
+  width: 400px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 40px 75px;
+  padding: 50px 40px;
 }
 
 .Login form h5 {
@@ -49,6 +49,7 @@
   width: 100%;
   font-weight: 500;
   letter-spacing: 1px;
+  text-transform: capitalize;
 }
 
 .Login form .login-button {
@@ -57,7 +58,7 @@
 }
 
 .Login form .question{
-  width: 100%; 
+   width: 100%; 
    text-align: center; 
    border-bottom: 1px solid gray; 
    line-height: 0.1em;

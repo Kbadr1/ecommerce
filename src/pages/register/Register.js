@@ -23,10 +23,13 @@ const Register = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const registerError = useSelector((state) => state.authReducer.registerError);
+  const registerLoading = useSelector(
+    (state) => state.authReducer.registerLoading
+  );
   const currentLanguage = useSelector(
     (state) => state.i18Reducer.currentLanguage
   );
-  const registerError = useSelector((state) => state.authReducer.registerError);
 
   const handleFirstName = (e) => {
     setFirstName(e.target.value);
@@ -89,21 +92,22 @@ const Register = () => {
   return (
     <div className="Register">
       <Form
-        firstName={firstName}
-        lastName={lastName}
-        phone={phone}
-        email={email}
-        password={password}
         t={t}
-        labelDir={labelDir}
-        registerError={registerError}
-        invalidIconDir={invalidIconDir}
+        firstName={firstName}
         handleFirstName={handleFirstName}
+        lastName={lastName}
         handleLastName={handleLastName}
+        phone={phone}
         handlePhoneChange={handlePhoneChange}
+        email={email}
         handleEmailChange={handleEmailChange}
+        password={password}
         handlePasswordChange={handlePasswordChange}
         registerSubmit={registerSubmit}
+        registerLoading={registerLoading}
+        registerError={registerError}
+        labelDir={labelDir}
+        invalidIconDir={invalidIconDir}
       />
     </div>
   );
