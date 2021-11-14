@@ -144,6 +144,62 @@ color: black;
   background-color: var(--main-color) !important;
 }
 
+/* explore-products */
+.Home .explore-products {
+  margin-top: 40px;
+}
+.Home .explore-products h3 {
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 37px;
+}
+.Home .explore-products  img {
+  width: 100%;
+  height: 100%;
+}
+.Home .explore-products .col-6 {
+  padding: 0 !important;
+}
+.Home .explore-products .list{
+  
+  border-style:  solid ;
+  border-color: #E5E5E5;
+  
+}
+.Home .explore-products .ar-img {
+  border-radius: 0 10px 10px 0;
+}
+.Home .explore-products .en-img {
+  border-radius: 10px 0 0 10px;
+}
+.Home .explore-products .ar-list{
+  border-width: 1px 0 1px 1px;
+  border-radius: 10px 0px 0px 10px;
+}
+.Home .explore-products .en-list {
+  border-width: 1px 1px 1px 0px;
+  border-radius: 0 10px 10px 0;
+}
+.Home .explore-products .active-cat {
+  color: var(--main-color) !important;
+}
+.Home .explore-products .list ul{
+  list-style: none;
+  padding: 0;
+}
+.Home .explore-products .list button {
+  text-align: start;
+  width: 100%;
+  padding: 12px;
+  font-size: 13px; 
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #555;
+}
+.Home .explore-products .slick-list> div {
+  margin-left:0;
+  }
 /* responsive */
 /* Extra small devices (phones, 576px and down) */
 @media only screen and (max-width: 576px) {
