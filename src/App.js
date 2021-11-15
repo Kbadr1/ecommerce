@@ -9,6 +9,7 @@ import {
   Shop,
   Category,
   Orders,
+  ProductDetails,
 } from "./pages/index";
 import { Navbar, ScrollToTop } from "./components/index";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -28,6 +29,11 @@ function App() {
     (state) => state.i18Reducer.currentLanguage
   );
 
+  const cart = useSelector((state) => state.cartReducer.cart);
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   useEffect(() => {
     dispatch(setCurrentLanguage());
     document.body.dir = currentLanguage.dir;
@@ -35,7 +41,7 @@ function App() {
   }, [currentLanguage, t]);
 
   useEffect(() => {
-    isAuthinticated === true && dispatch(getUser());
+    isAuthinticated && dispatch(getUser());
   }, [isAuthinticated]);
 
   return (
@@ -51,6 +57,7 @@ function App() {
           <Route path="/shop" component={Shop} />
           <Route path="/category/:id" component={Category} />
           <Route path="/orders" component={Orders} />
+          <Route path="/product/:id" component={ProductDetails} />
         </Switch>
         <ScrollToTop />
       </div>

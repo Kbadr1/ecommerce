@@ -34,3 +34,38 @@ export const productsFetch = () => {
       });
   };
 };
+
+export const productFetchRequest = () => {
+  return {
+    type: "PRODUCT_FETCH_REQUEST",
+  };
+};
+
+export const productFetchSuccess = (product) => {
+  return {
+    type: "PRODUCT_FETCH_SUCCESS",
+    payload: {
+      product,
+    },
+  };
+};
+
+export const productFetchError = () => {
+  return {
+    type: "PRODUCT_FETCH_ERROR",
+  };
+};
+
+export const productFetch = (id) => {
+  return (dispatch) => {
+    dispatch(productFetchRequest());
+    axios
+      .get(`https://whispering-garden-92445.herokuapp.com/products/${id}`)
+      .then((res) => {
+        dispatch(productFetchSuccess(res.data));
+      })
+      .catch((err) => {
+        dispatch(productFetchError());
+      });
+  };
+};

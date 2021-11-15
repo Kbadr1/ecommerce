@@ -6,5 +6,16 @@ import Register from "./register/Register";
 import Shop from "./shop/Shop";
 import Category from "./category/Category";
 import Orders from "./orders/Orders";
+import ProductDetails from "./productDetails/ProductDetails";
 
-export { Home, Cart, Deals, Login, Register, Shop, Category, Orders };
+export {
+  Home,
+  Cart,
+  Deals,
+  Login,
+  Register,
+  Shop,
+  Category,
+  Orders,
+  ProductDetails,
+};

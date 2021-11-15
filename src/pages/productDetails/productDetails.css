@@ -1,0 +1,13 @@
+@import "../../styles/variables.css";
+
+.ProductDetails{
+  padding: 20px 0;
+}
+
+.ProductDetails .img-wrapper {
+  border: 1px solid #EEEEEE;
+  border-radius: 10px;
+}
+.ProductDetails .img-wrapper img {
+  width: 100%;
+}

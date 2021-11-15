@@ -19,6 +19,10 @@ body[lang =ar] {
   display: none;
 } */
 
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}
 
 .btn:focus, .btn:active:focus, .btn.active:focus{
   outline:none;

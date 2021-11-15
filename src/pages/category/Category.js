@@ -3,6 +3,7 @@ import "./category.css";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { categoryFetch } from "../../redux/actions/categoriesActions";
+import { productsFetch } from "../../redux/actions/productsActions";
 import { useTranslation } from "react-i18next";
 import {
   Product,
@@ -29,6 +30,7 @@ const Category = () => {
 
   useEffect(() => {
     dispatch(categoryFetch(id));
+    dispatch(productsFetch());
   }, [id]);
 
   const allProducts =
