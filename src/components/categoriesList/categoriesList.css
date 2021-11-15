@@ -16,7 +16,7 @@
   border-width: 0 1px 0 1px;
   border-radius: 10px 10px 4px 4px;
 }
-.categoriesList ul li{
+.categoriesList ul li, .small-categoriesList ul li{
   border-bottom: 1px solid #EEEEEE;
   padding: 12px;
   font-size: 13px; 
@@ -34,4 +34,35 @@
 }
 .categoriesList .active-category {
   color: var(--main-color);
+}
+
+.small-categoriesList {
+  margin-bottom: 20px;
+}
+
+.small-categoriesList  button, .small-categoriesList  button:hover {
+  width: 100%;
+  text-align: left;
+  font-weight: 500;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 14px;
+  border-radius: 0;
+}
+.small-categoriesList  button span {
+  float: right;
+}
+ .small-categoriesList ul {
+  list-style: none;
+  padding: 0;
+  border:  solid #EEEEEE;
+  border-width: 0 1px 0 1px;
+  border-radius: 0;
+ }
+ .small-categoriesList ul li{
+  border-bottom: 1px solid #EEEEEE;
+  padding: 12px;
+  font-size: 12px; 
+  font-weight: 500;
+  text-transform: capitalize;
 }

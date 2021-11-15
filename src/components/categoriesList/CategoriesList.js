@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./categoriesList.css";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +16,8 @@ const CategoriesList = ({}) => {
   const categoriesLoading = useSelector(
     (state) => state.categoriesReducer.categoriesLoading
   );
+
+  const [collapseIcon, setCollapseIcon] = useState("plus");
 
   useEffect(() => {
     dispatch(categoriesFetch());
@@ -42,12 +44,34 @@ const CategoriesList = ({}) => {
     );
 
   return (
-    <div className="d-none d-md-block col-md-4 col-lg-3 categoriesList">
-      <ul>
-        <li className="title">{t("shop.category")}</li>
-        {allCategories}
-      </ul>
-    </div>
+    <>
+      {/* display on small screens */}
+      <div className="d-block d-md-none small-categoriesList">
+        <button
+          className="btn"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          Categories{" "}
+          <span>
+            <i className={`bi bi-${collapseIcon}-lg`}></i>
+          </span>
+        </button>
+        <ul className="collapse" id="collapseExample">
+          {allCategories}
+        </ul>
+      </div>
+      {/* display on +md screens */}
+      <div className="d-none d-md-block col-md-4 col-lg-3 categoriesList">
+        <ul>
+          <li className="title">{t("shop.category")}</li>
+          {allCategories}
+        </ul>
+      </div>
+    </>
   );
 };
 
