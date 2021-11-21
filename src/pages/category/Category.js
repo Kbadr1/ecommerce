@@ -11,6 +11,7 @@ import {
   ProductsLoading,
   PagePath,
 } from "../../components";
+import PagePathLoading from "../../components/pagePathLoading/PagePathLoading";
 
 const Category = () => {
   const { id } = useParams();
@@ -48,13 +49,18 @@ const Category = () => {
 
   return (
     <div className="Category container">
-      <PagePath
-        firstLink={"shop"}
-        firstLinkTitle={t("shop.all_products")}
-        currentPage={
-          currentLanguage.code === "en" ? category.en_name : category.ar_name
-        }
-      />
+      {categoryLoading === true ? (
+        <PagePathLoading />
+      ) : (
+        <PagePath
+          firstLink={"shop"}
+          firstLinkTitle={t("shop.all_products")}
+          currentPage={
+            currentLanguage.code === "en" ? category.en_name : category.ar_name
+          }
+        />
+      )}
+
       <div className="row">
         <CategoriesList />
         <div className="col-md-8 col-lg-9">

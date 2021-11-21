@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { productFetch } from "../../redux/actions/productsActions";
 import { PagePath } from "../../components";
+import PagePatheLoading from "../../components/pagePathLoading/PagePathLoading";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -21,13 +22,13 @@ const ProductDetails = () => {
   return (
     <div className="ProductDetails container">
       {productLoading === true ? (
-        <p>loading...</p>
+        <PagePatheLoading />
       ) : (
         <PagePath
           firstLink={"shop"}
           firstLinkTitle={"All Products"}
-          secondLink={`category/${product.category.id}`}
-          secondLinkTitle={product.category.en_name}
+          secondLink={product.category && `category/${product.category.id}`}
+          secondLinkTitle={product.category && product.category.en_name}
           currentPage={product.en_name}
         />
       )}
