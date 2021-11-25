@@ -2,12 +2,128 @@
 
 .ProductDetails{
   padding: 20px 0;
+  color: black;
 }
-
 .ProductDetails .img-wrapper {
   border: 1px solid #EEEEEE;
   border-radius: 10px;
 }
 .ProductDetails .img-wrapper img {
   width: 100%;
+}
+.ProductDetails .product-description h5,
+.ProductDetails .product-description h6,
+.ProductDetails .product-description p{
+  margin-bottom: 6px;
+}
+.ProductDetails .product-description  .product-title{
+  text-transform: capitalize;
+}
+.ProductDetails  .product-description .product-count{
+  font-size: 12px;
+}
+.ProductDetails  .product-description .product-price {
+  color: rgb(0, 0, 0,0.8);
+  font-weight: 700;
+}
+.ProductDetails .product-purchase{
+  margin: 30px 0;
+}
+.ProductDetails .product-purchase .qty {
+  border: 1px solid #EEEEEE;
+  border-radius: 0;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-right: 10px;
+  width: 120px;
+}
+.ProductDetails .dropdown-toggle::after {
+  display: none;
+}
+.ProductDetails .product-purchase .add{
+  background-color: var(--main-color);
+  color: white;
+  font-weight: 500;
+  border: 1px solid var(--main-color);
+  padding-right:60px;
+  padding-left: 60px;
+}
+.ProductDetails .product-weight{
+  height: 200px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.ProductDetails .weight-title {
+  font-size: 12px;
+  cursor: default !important;
+}
+.ProductDetails .weight-title:hover {
+  background-color: white;
+}
+.ProductDetails .dropdown-menu {
+  height: 240px;
+  overflow: scroll;
+  overflow-x: hidden;
+  min-width: 120px;
+  max-width: 120px;
+  border-color: #EEEEEE;
+  border-radius: 0;
+  text-align: center;
+  padding: 0;
+}
+.ProductDetails .dropdown-menu .dropdown-item{
+  cursor: pointer;
+  border-bottom: 1px solid #EEEEEE;
+  font-weight: 500;
+}
+.ProductDetails .dropdown-menu .weight{
+  padding: 0;
+}
+/* width */
+.ProductDetails .dropdown-menu::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+.ProductDetails .dropdown-menu::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+/* Handle */
+.ProductDetails .dropdown-menu::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0px;
+}
+/* Handle on hover */
+.ProductDetails .dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+.ProductDetails .product-features div {
+  background-color: #f5f5f5;
+  font-size: 14px;
+  padding-left: 10px;
+  border-radius: 2px;
+}
+.ProductDetails .product-features p {
+  padding: 5px 0;
+}
+.ProductDetails .product-features .free-delivery {
+  border-left: 5px solid var(--main-color);
+  color: var(--main-color);
+  font-weight: 500;
+}
+.ProductDetails .product-features .time {
+  font-weight: 500;
+}
+
+.ProductDetails .description {
+  margin: 40px 0;
+}
+
+.ProductDetails .description h5 {
+  color: var(--main-color);
+  font-weight: 700;
+}
+.ProductDetails .description p {
+  font-size: 14px;
 }
