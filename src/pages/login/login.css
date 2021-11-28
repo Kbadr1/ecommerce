@@ -1,35 +1,43 @@
 @import "../../styles//variables.css";
 
 .Login {
-   display: flex;
+   background-color: #F5F5F5;
+}
+
+.Login .form-container {
+  display: flex;
    justify-content:center ;
    align-items: center;
-   height: 100vh;
+   height: calc(100vh - 111px);
 }
 
 .Login form {
   width: 400px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.05);
   padding: 50px 40px;
 }
 
 .Login form h5 {
-  font-weight: 700;
-  color: black;
+  color: #4D4D4D;
   margin: 0 0 10px 0;
+  font-weight: 700;
 }
 
 .Login form label {
-  color: gray;
-  font-size: 15px;
+  color: #4D4D4D;
+  opacity: 0.6;
+  font-size: 14px;
+  padding: 1rem 0.35rem
 } 
 .Login form .form-control {
   height: 3rem;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
   outline: none !important;
   box-shadow: none !important;
+  padding: 1rem 0.5rem;
 }
 
 .Login form input {
@@ -90,7 +98,7 @@
   text-align: center;
   width: 100%;
   color: #dc3545;
-  background-color: #f3c8cc;
+  background-color: #f5d2d6;
   border-radius: 5px;
   margin-bottom: 30px;
 }
@@ -115,4 +123,27 @@
 }
 .en-invalid-icon.is-invalid, .was-validated .en-invalid-icon:invalid{
   background-position: right calc(.375em + .1875rem) center;
+}
+
+
+.Login .en-form-floating>.form-control:focus~label, .en-form-floating>.form-control:not(:placeholder-shown)~label, .en-form-floating>.form-select~label {
+  opacity: 1;
+  transform: scale(.75) translateY(-0.8rem) translateX(0.15rem);
+}
+.Login .ar-form-floating>.form-control:focus~label, .ar-form-floating>.form-control:not(:placeholder-shown)~label, .ar-form-floating>.form-select~label {
+  opacity: 1;
+  transform: scale(.75) translateY(-0.8rem) translateX(4.15rem);
+}
+.Login .ar-password-form-floating>.form-control:focus~label, .ar-password-form-floating>.form-control:not(:placeholder-shown)~label, .ar-password-form-floating>.form-select~label {
+  opacity: 1;
+  transform: scale(.75) translateY(-0.8rem) translateX(1.45rem);
+}
+
+
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+  .Login form {
+    padding: 50px 20px;
+  }
 }
