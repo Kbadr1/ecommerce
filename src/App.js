@@ -16,7 +16,7 @@ import { Navbar, ScrollToTop } from "./components/index";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./redux/actions/userActions";
-import { setCurrentLanguage } from "./redux/actions";
+import { setCurrentLanguage } from "./redux/actions/i18Actions.js";
 import { useTranslation } from "react-i18next";
 
 function App() {

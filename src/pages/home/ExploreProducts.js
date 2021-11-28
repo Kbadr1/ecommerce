@@ -1,19 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { exploreImage } from "../../images/index";
+import { Product } from "../../components";
 
-const ExploreProducts = ({
-  exploreImage,
-  currentLanguage,
-  categories,
-  Product,
-  currentCategory,
-  setCategoryId,
-  categoryProducts,
-  products,
-}) => {
+const ExploreProducts = ({ setCategoryId }) => {
+  const currentLanguage = useSelector(
+    (state) => state.i18Reducer.currentLanguage
+  );
+  const products = useSelector((state) => state.productsReducer.products);
+  const categories = useSelector((state) => state.categoriesReducer.categories);
+  const currentCategory = useSelector(
+    (state) => state.categoriesReducer.category
+  );
+  const categoryProducts = useSelector(
+    (state) => state.categoriesReducer.categoryProducts
+  );
+
   const slickRows = categoryProducts.length <= 3 ? 1 : 2;
   const slickInfinite = categoryProducts.length <= 6 ? false : true;
 

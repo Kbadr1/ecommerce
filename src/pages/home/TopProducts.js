@@ -1,8 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { ProductsLoading, Product } from "../../components";
 
-const TopProducts = ({ t, products }) => {
+const TopProducts = () => {
+  const { t } = useTranslation();
+
+  const products = useSelector((state) => state.productsReducer.products);
   const productsLoading = useSelector(
     (state) => state.productsReducer.productsLoading
   );

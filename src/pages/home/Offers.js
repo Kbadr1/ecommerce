@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-const Offers = ({ t }) => {
+const Offers = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="offers container">
       <div className="row">
