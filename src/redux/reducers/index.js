@@ -4,6 +4,7 @@ import { authReducer } from "./authReducer";
 import { categoriesReducer } from "./categoriesReducer";
 import { productsReducer } from "./productsReducer";
 import { cartReducer } from "./cartReducer";
+import { searchReducer } from "./searchReducer";
 
 const allReducers = combineReducers({
   i18Reducer,
@@ -11,6 +12,7 @@ const allReducers = combineReducers({
   categoriesReducer,
   productsReducer,
   cartReducer,
+  searchReducer,
 });
 
 export default allReducers;

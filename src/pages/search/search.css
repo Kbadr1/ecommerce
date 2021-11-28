@@ -1,0 +1,32 @@
+@import "../../styles/variables.css";
+
+.Search {
+  padding: 20px 0;
+}
+
+.Search .header {
+  background-color: #EEEEEE;
+  border-radius: 10px;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+}
+.Search .header  h3 {
+  margin: 0;
+}
+.Search .header span {
+  color: black;
+}
+
+.Search .no-results h2 {
+  color: black;
+  margin-bottom: 15px;
+}
+.Search .no-results h5 {
+  margin-bottom: 15px;
+}
+.Search .no-results button {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: 500;
+  padding: 10px 60px;
+}

@@ -7,6 +7,7 @@ import Shop from "./shop/Shop";
 import Category from "./category/Category";
 import Orders from "./orders/Orders";
 import ProductDetails from "./productDetails/ProductDetails";
+import Search from "./search/Search";
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   Category,
   Orders,
   ProductDetails,
+  Search,
 };

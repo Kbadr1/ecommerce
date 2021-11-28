@@ -6,8 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../redux/actions/logoutActions";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import { setQuery, setSearchTerm } from "../../../redux/actions/searchActions";
+import { useHistory } from "react-router";
 
 const MainNavbar = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const languages = useSelector((state) => state.i18Reducer.languages);
@@ -19,6 +22,21 @@ const MainNavbar = () => {
     (state) => state.authReducer.isAuthinticated
   );
   const user = useSelector((state) => state.authReducer.user);
+
+  const searchTerm = useSelector((state) => state.searchReducer.searchTerm);
+
+  const query = useSelector((state) => state.searchReducer.query);
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    dispatch(setQuery(searchTerm));
+    dispatch(setSearchTerm(""));
+    // history.push("/search");
+    if (searchTerm !== "") {
+      history.push("/search");
+    } else {
+      return;
+    }
+  };
 
   // language button : map through the languages array and return a button for each language, hide the current selected language button
   const languageButton = languages.map((language) => (
@@ -97,6 +115,7 @@ const MainNavbar = () => {
         </div>
         {/* form only for small and medium screens */}
         <form
+          onSubmit={handleSearchSubmit}
           className="d-flex  d-lg-none"
           style={{ width: "100%", marginTop: "5px", padding: "0" }}
         >
@@ -107,12 +126,14 @@ const MainNavbar = () => {
             type="search"
             placeholder={t("mainNavbar_input_placeholder")}
             aria-label="Search"
+            value={searchTerm}
+            onChange={(e) => dispatch(setSearchTerm(e.target.value))}
           />
           <button
+            type="submit"
             className={`btn btn-outline-success ${
               currentLanguageCode === "ar" ? "rounded-start" : "rounded-end"
             }`}
-            type="submit"
           >
             <i className="bi bi-search"></i>
           </button>
@@ -121,7 +142,7 @@ const MainNavbar = () => {
         {/* navbar content (form and Links) */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {/* form only for +lg screens */}
-          <form className=" d-none d-lg-flex">
+          <form className=" d-none d-lg-flex" onSubmit={handleSearchSubmit}>
             <input
               className={`form-control ${
                 currentLanguageCode === "ar" ? "rounded-end" : "rounded-start"
@@ -129,12 +150,14 @@ const MainNavbar = () => {
               type="search"
               placeholder={t("mainNavbar_input_placeholder")}
               aria-label="Search"
+              value={searchTerm}
+              onChange={(e) => dispatch(setSearchTerm(e.target.value))}
             />
             <button
+              type="submit"
               className={`btn btn-outline-success ${
                 currentLanguageCode === "ar" ? "rounded-start" : "rounded-end"
               }`}
-              type="submit"
             >
               <i className="bi bi-search"></i>
             </button>

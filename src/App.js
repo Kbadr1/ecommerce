@@ -10,6 +10,7 @@ import {
   Category,
   Orders,
   ProductDetails,
+  Search,
 } from "./pages/index";
 import { Navbar, ScrollToTop } from "./components/index";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -58,6 +59,7 @@ function App() {
           <Route path="/category/:id" component={Category} />
           <Route path="/orders" component={Orders} />
           <Route path="/product/:id" component={ProductDetails} />
+          <Route path="/search" component={Search} />
         </Switch>
         <ScrollToTop />
       </div>
